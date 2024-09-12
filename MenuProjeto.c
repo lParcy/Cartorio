@@ -159,6 +159,7 @@ int main()
  	    printf("\t1 - Registro de usuario\n");
  	    printf("\t2 - Procurar usuario\n");
  	    printf("\t3 - Remover Usuario\n");
+ 	    printf("\t4 - Sair\n\n");
  	    printf("Opção:"); //fim do menu
  	 
      scanf("%d", &opcao); //armazenando a escolha do usuario
@@ -179,7 +180,9 @@ int main()
  		        deletar();
 		        break;
 		        
-		    
+		    case 4:
+                printf("Saindo...\n");
+                exit(0); // Encerra o programa
 		        
 		    default:
 			    printf("Opção inválida!\n");
