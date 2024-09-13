@@ -49,6 +49,7 @@ int registro()//função responsavel por cadastrar os usuários no sistema
 	
 	file = fopen(arquivo, "a"); //abrir arquivo e atualizar 'a'
 	fprintf(file," Sobrenome do usuario: %s   \n",sobrenome);//nomeando o arquivo
+	printf("\n");
 	fclose(file);//fecha o arquivo
 	
 	    printf("Digite o cargo a ser Cadastrado: ");
@@ -143,12 +144,30 @@ char cpf[40];//criação de variáveis/string
 }
 int main()
 {
+	setlocale(LC_ALL,"portuguese");//definindo linguagem
 	int opcao=0; //Definindo as Variaveis
-	
 	int laco=1;
+	char senhadigitada[10]="a";
+	char logindigitado[10]="b";
+	int comparacao;
 	
- 	for(laco=1;laco=1;)
- 	{
+	printf("Cartório da EBAC\n\n");
+	printf("Login de adminstrador!\n\nDigite o seu Login:");
+	scanf("%s",logindigitado);
+	printf("Digite a sua Senha: ");
+	scanf("%s",senhadigitada);
+	
+	comparacao = strcmp(logindigitado, "admin"); //string de comparaçao
+	if(comparacao == 0)
+	{
+	
+	comparacao = strcmp(senhadigitada, "admin"); //string de comparaçao
+	
+	if(comparacao == 0)
+	{
+	
+ 	    for(laco=1;laco=1;)
+    	 {
  		
  		system("cls");// responsavel por limpar a tela
 
@@ -162,9 +181,9 @@ int main()
  	    printf("\t4 - Sair\n\n");
  	    printf("Opção:"); //fim do menu
  	 
-     scanf("%d", &opcao); //armazenando a escolha do usuario
+        scanf("%d", &opcao); //armazenando a escolha do usuario
 	 
- 	 system("cls");// responsavel por limpar a tela
+    	 system("cls");// responsavel por limpar a tela
  	 
  	    switch(opcao) //inicio da seleção do menu
  	    {
@@ -189,8 +208,12 @@ int main()
 			    system("pause");
 			    break;
 				//fim da seleção do menu
-		 }
-	}
+		    }
+    	}
+}
+}
+     else
+         printf("senha incorreta!");//informando ao usuario 
 }
 	 
 
